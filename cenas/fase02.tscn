@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://ci5yy26wxm42m"]
+
+[ext_resource type="PackedScene" uid="uid://dt4jeogfkkex3" path="res://cenas/player.tscn" id="1_x58re"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0du0"]
+size = Vector2(57.25, 342.89594)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cm0pq"]
+size = Vector2(863, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uu6xs"]
+size = Vector2(1241.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glv2v"]
+size = Vector2(57.25, 258)
+
+[node name="Main" type="Node2D"]
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(1188, -544)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-390.48297, 1050.285)
+rotation = -0.87266463
+shape = SubResource("RectangleShape2D_r0du0")
+
+[node name="Player" parent="." instance=ExtResource("1_x58re")]
+position = Vector2(321.796, 376.075)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+offset = Vector2(0, -100)
+
+[node name="Chao" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chao"]
+position = Vector2(349, 639)
+shape = SubResource("RectangleShape2D_cm0pq")
+
+[node name="Teto" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teto"]
+position = Vector2(492, 222)
+shape = SubResource("RectangleShape2D_uu6xs")
+
+[node name="Parede" type="StaticBody2D" parent="."]
+position = Vector2(594, -272)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parede"]
+position = Vector2(60.375, 772)
+shape = SubResource("RectangleShape2D_glv2v")
